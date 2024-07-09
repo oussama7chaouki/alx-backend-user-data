@@ -2,9 +2,6 @@ from flask import request
 from typing import List, TypeVar
 
 
-User = TypeVar('User')
-
-
 class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         # path and excluded_paths will be used later
@@ -15,6 +12,6 @@ class Auth:
         # request will be the Flask request object
         return None
 
-    def current_user(self, request=None) -> User:
+    def current_user(self, request=None) -> TypeVar('User'):
         # request will be the Flask request object
         return None
